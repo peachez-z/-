@@ -1,13 +1,15 @@
 import { InputTags } from "react-bootstrap-tagsinput";
 import CenterdOverlayForm from "../components/CenterdOverlayForm";
 import { Container, Form, Row, Button } from "react-bootstrap";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { groupMambersState } from "../state/groupMembers";
+import { groupNameState } from "../state/groupName";
 import { useState } from "react";
 
 export default function AddMembers() {
   const [groupMambers, setGroupMembers] = useRecoilState(groupMambersState);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const groupName = useRecoilValue(groupNameState);
   const handleSubmit = (event) => {
     event.preventDefault();
     setFormSubmitted(true);
@@ -17,7 +19,7 @@ export default function AddMembers() {
       <Container>
         <Form noValidate onSubmit={handleSubmit}>
           <Row>
-            <h2>그룹에 속한 사람들의 이름을 모두 적어 주세요.</h2>
+            <h2>{groupName} 그룹에 속한 사람들의 이름을 모두 적어 주세요.</h2>
           </Row>
           <Row>
             <InputTags
