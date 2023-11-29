@@ -119,6 +119,7 @@ export default function AddExpenseForm() {
                   <option disabled value="">
                     누가 결제했나요?
                   </option>
+                  <option>가을</option>
                   {members.map((member) => (
                     <option key={member} value={member}>
                       {member}
