@@ -3,22 +3,28 @@ import CenterdOverlayForm from "../components/shared/CenterdOverlayForm";
 import { useSetRecoilState } from "recoil";
 import { groupNameState } from "../state/groupName";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateGroup() {
   const [validated, setValidated] = useState(false);
   const [validGroupName, setValidGroupName] = useState(false);
   const setGroupName = useSetRecoilState(groupNameState);
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity()) {
       setValidGroupName(true);
+      // 다음 페이지로
+      navigate("/members");
     } else {
       event.stopPropagation();
       setValidGroupName(false);
     }
     setValidated(true);
   };
+
   return (
     <CenterdOverlayForm
       title="먼저, 더치 페이 할 그룹의 이름을 정해볼까요?"

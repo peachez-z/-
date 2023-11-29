@@ -38,7 +38,6 @@ export default function AddExpenseForm() {
   };
 
   const handleSubmit = (event) => {
-    console.log(date, desc, amount, payer);
     event.preventDefault();
     const form = event.currentTarget;
     if (checkFormValidity()) {
@@ -119,9 +118,6 @@ export default function AddExpenseForm() {
                   <option disabled value="">
                     누가 결제했나요?
                   </option>
-                  <option>가을</option>
-                  <option>봄</option>
-                  <option>겨울</option>
                   {members.map((member) => (
                     <option key={member} value={member}>
                       {member}
@@ -171,7 +167,7 @@ const StyledWrapper = styled.div`
   border-radius: 15px;
 `;
 
-const StyledTitle = styled.h3`
+export const StyledTitle = styled.h3`
   color: #fffbfb;
   text-align: center;
   font-weight: 700;

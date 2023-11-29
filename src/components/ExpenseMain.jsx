@@ -24,15 +24,17 @@ export default function ExpenseMain() {
 
 const LeftPane = () => (
   <Container>
-    <Row>
-      <ServieceLogo />
-    </Row>
-    <Row>
-      <AddExpenseForm />
-    </Row>
-    <Row>
-      <SettlementSummary />
-    </Row>
+    <StyledRow>
+      <Row>
+        <ServieceLogo />
+      </Row>
+      <Row>
+        <AddExpenseForm />
+      </Row>
+      <Row>
+        <SettlementSummary />
+      </Row>
+    </StyledRow>
   </Container>
 );
 
@@ -60,4 +62,10 @@ const StyledGroupName = styled.h2`
   font-size: 48px;
   line-height: 48px;
   text-align: center;
+`;
+
+const StyledRow = styled(Row)`
+  gap: 5vh;
+  padding-top: 100px;
+  justify-content: center;
 `;
