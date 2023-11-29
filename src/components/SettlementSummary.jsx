@@ -2,6 +2,7 @@ import { useRecoilValue } from "recoil";
 import { expensesState } from "../state/expenses";
 import styled from "styled-components";
 import { StyledTitle } from "../components/AddExpenseForm";
+import { groupMembersState } from "../state/groupMembers";
 
 export const calculateMinimumTransaction = (
   expenses,
@@ -67,7 +68,7 @@ export const calculateMinimumTransaction = (
 
 export default function SettlementSummary() {
   const expenses = useRecoilValue(expensesState);
-  const members = ["가을", "봄", "겨울"];
+  const members = useRecoilValue(groupMembersState);
 
   const totalExpenseAmount = parseFloat(
     expenses.reduce(
