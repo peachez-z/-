@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
-export const groupMambersState = atom({
+export const groupMembersState = atom({
   key: "groupMambers",
   default: [],
 });

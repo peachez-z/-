@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-export default function OverlayWrapper({ children }) {
-  return <StyledContainer>{children}</StyledContainer>;
+export default function OverlayWrapper({ children, padding, minheight }) {
+  return (
+    <StyledContainer padding={padding} minheight={minheight}>
+      {children}
+    </StyledContainer>
+  );
 }
 const StyledContainer = styled.div`
   padding: ${(props) => props.padding || "5vw"};

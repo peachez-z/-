@@ -1,5 +1,6 @@
 /* @import "~bootstrap/scss/bootstrap"; */
 
-body {
-  background-color: lightblue;
+#root {
+  background-color: #e5e3e5;
+  height: 100vh;
 }

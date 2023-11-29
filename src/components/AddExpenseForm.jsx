@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { groupMambersState } from "../state/groupMembers";
+import { groupMembersState } from "../state/groupMembers";
 import { expensesState } from "../state/expenses";
 import styled from "styled-components";
 
 export default function AddExpenseForm() {
   const [validated, setValidated] = useState(false);
-  const members = useRecoilValue(groupMambersState);
+  const members = useRecoilValue(groupMembersState);
 
   const setExpense = useSetRecoilState(expensesState);
 
@@ -120,6 +120,8 @@ export default function AddExpenseForm() {
                     누가 결제했나요?
                   </option>
                   <option>가을</option>
+                  <option>봄</option>
+                  <option>겨울</option>
                   {members.map((member) => (
                     <option key={member} value={member}>
                       {member}

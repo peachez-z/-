@@ -1,13 +1,13 @@
 import { InputTags } from "react-bootstrap-tagsinput";
-import CenterdOverlayForm from "../components/CenterdOverlayForm";
+import CenterdOverlayForm from "../components/shared/CenterdOverlayForm";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { groupMambersState } from "../state/groupMembers";
+import { groupMembersState } from "../state/groupMembers";
 import { groupNameState } from "../state/groupName";
 import { useState } from "react";
 import styled from "styled-components";
 
 export default function AddMembers() {
-  const [groupMambers, setGroupMembers] = useRecoilState(groupMambersState);
+  const [groupMambers, setGroupMembers] = useRecoilState(groupMembersState);
   const [validated, setValidated] = useState(false);
   const groupName = useRecoilValue(groupNameState);
   const handleSubmit = (event) => {

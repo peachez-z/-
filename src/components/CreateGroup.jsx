@@ -1,5 +1,5 @@
 import { Form } from "react-bootstrap";
-import CenterdOverlayForm from "../components/CenterdOverlayForm";
+import CenterdOverlayForm from "../components/shared/CenterdOverlayForm";
 import { useSetRecoilState } from "recoil";
 import { groupNameState } from "../state/groupName";
 import { useState } from "react";
